@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  armor: 1
+  damage_min: 1
+  damage_max: 1
+  sell_price: 1
+  buy_price: 1
+  enhancement_slots: 1
+  other_effects: MyString
+  comments: MyString
+
+two:
+  name: MyString
+  armor: 1
+  damage_min: 1
+  damage_max: 1
+  sell_price: 1
+  buy_price: 1
+  enhancement_slots: 1
+  other_effects: MyString
+  comments: MyString
