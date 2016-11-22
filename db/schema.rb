@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121231922) do
+ActiveRecord::Schema.define(version: 20161122183237) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20161121231922) do
     t.string   "armor_type"
     t.float    "weight"
     t.integer  "level_requirement"
+    t.string   "thumbnail_url"
+    t.string   "wiki_url"
+    t.string   "thumbnail_size"
   end
 
   create_table "users", force: :cascade do |t|

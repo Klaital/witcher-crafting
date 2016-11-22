@@ -14,11 +14,11 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
+        <td><%= item.thumbnail_url.nil? ? '' : image_tag(item.thumbnail_url, size: item.small_thumbnail_size) %> <%= item.name %></td>
         <td><%= item.slot %></td>
         <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) if logged_in? %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } if logged_in? %></td>
       </tr>
     <% end %>
   </tbody>

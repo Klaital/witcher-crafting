@@ -18,26 +18,30 @@
   </div>
     <div class="field">
       <%= f.label :slot %>
-      <%= f.text_field :slot %>
+      <%= f.select(:slot, Item::VALID_EQUIPMENT_SLOTS) %>
     </div>
     <div class="field">
       <%= f.label :tier %>
-      <%= f.select(:tier, %w[Normal Master Magic Witcher]) %>
+      <%= f.select(:tier, Item::VALID_ITEM_TIERS) %>
     </div>
     <div class="field">
       <%= f.label :craft_type %>
-      <%= f.select(:craft_type, %w[Blacksmith Swordsmith Alchemy component]) %>
+      <%= f.select(:craft_type, Item::VALID_CRAFT_TYPES) %>
     </div>
     <div class="field">
-      <%= f.label :armor, 'Armor Rating, if applicable' %>
+      <%= f.label :armor, 'Armor Rating (if applicable)' %>
       <%= f.number_field :armor %>
     </div>
     <div class="field">
-      <%= f.label :damage_min, 'Minimum damage rating, if applicable' %>
+      <%= f.label :armor_type %>
+      <%= f.select(:armor_type, Item::VALID_ARMOR_TYPES) %>
+    </div>
+    <div class="field">
+      <%= f.label :damage_min, 'Minimum damage rating (if applicable)' %>
       <%= f.number_field :damage_min %>
     </div>
     <div class="field">
-      <%= f.label :damage_max, 'Maximum damage rating, if applicable' %>
+      <%= f.label :damage_max, 'Maximum damage rating (if applicable)' %>
       <%= f.number_field :damage_max %>
     </div>
     <div class="field">
@@ -45,7 +49,7 @@
       <%= f.number_field :val %>
     </div>
     <div class="field">
-      <%= f.label :enhancement_slots, 'Number of Enhancement Slots' %>
+      <%= f.label :enhancement_slots, 'Number of Rune Slots' %>
       <%= f.number_field :enhancement_slots %>
     </div>
     <div class="field">
@@ -54,7 +58,7 @@
     </div>
     <div class="field">
       <%= f.label :weight %>
-      <%= f.number_field :weight %>
+      <%= f.text_field :weight %>
     </div>
     <div class="field">
       <%= f.label :other_effects %>
@@ -64,8 +68,20 @@
       <%= f.label :comments %>
       <%= f.text_area :comments %>
     </div>
+    <div class="field">
+      <%= f.label :thumbnail_url %>
+      <%= f.text_field :thumbnail_url %>
+    </div>
+    <div class="field">
+      <%= f.label :thumbnail_size %>
+      <%= f.text_field :thumbnail_size %>
+    </div>
+    <div class="field">
+      <%= f.label :wiki_url %>
+      <%= f.text_field :wiki_url %>
+    </div>
 
-  <div class="actions">
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
