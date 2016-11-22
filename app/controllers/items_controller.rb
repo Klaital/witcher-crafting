@@ -19,7 +19,10 @@ class ItemsController < ApplicationController
       redirect_to login_path and return
     end
 
+    # Set default values
     @item = Item.new
+    @item.weight = 0.0
+    @item.craft_type = 'component'
   end
 
   # GET /items/1/edit

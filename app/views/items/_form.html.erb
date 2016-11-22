@@ -11,6 +11,60 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :slot %>
+      <%= f.text_field :slot %>
+    </div>
+    <div class="field">
+      <%= f.label :tier %>
+      <%= f.select(:tier, %w[Normal Master Magic Witcher]) %>
+    </div>
+    <div class="field">
+      <%= f.label :craft_type %>
+      <%= f.select(:craft_type, %w[Blacksmith Swordsmith Alchemy component]) %>
+    </div>
+    <div class="field">
+      <%= f.label :armor, 'Armor Rating, if applicable' %>
+      <%= f.number_field :armor %>
+    </div>
+    <div class="field">
+      <%= f.label :damage_min, 'Minimum damage rating, if applicable' %>
+      <%= f.number_field :damage_min %>
+    </div>
+    <div class="field">
+      <%= f.label :damage_max, 'Maximum damage rating, if applicable' %>
+      <%= f.number_field :damage_max %>
+    </div>
+    <div class="field">
+      <%= f.label :val, 'Gold Value' %>
+      <%= f.number_field :val %>
+    </div>
+    <div class="field">
+      <%= f.label :enhancement_slots, 'Number of Enhancement Slots' %>
+      <%= f.number_field :enhancement_slots %>
+    </div>
+    <div class="field">
+      <%= f.label :level_requirement %>
+      <%= f.number_field :level_requirement %>
+    </div>
+    <div class="field">
+      <%= f.label :weight %>
+      <%= f.number_field :weight %>
+    </div>
+    <div class="field">
+      <%= f.label :other_effects %>
+      <%= f.text_area :other_effects %>
+    </div>
+    <div class="field">
+      <%= f.label :comments %>
+      <%= f.text_area :comments %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
