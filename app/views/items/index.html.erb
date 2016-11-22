@@ -13,10 +13,12 @@
 
   <tbody>
     <% @items.each do |item| %>
+      <% thumbnail_tag = item.thumbnail_url.nil? ? '' : image_tag(item.thumbnail_url, size: item.small_thumbnail_size) %>
+      <% first_recipe = Recipe.find_by(item_id: item.id) %>
       <tr>
-        <td><%= item.thumbnail_url.nil? ? '' : image_tag(item.thumbnail_url, size: item.small_thumbnail_size) %> <%= item.name %></td>
+        <td><%= link_to thumbnail_tag + item.name, item %></td>
         <td><%= item.slot %></td>
-        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Recipe', (first_recipe.nil? ? new_recipe_path : first_recipe)  %></td>
         <td><%= link_to 'Edit', edit_item_path(item) if logged_in? %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } if logged_in? %></td>
       </tr>

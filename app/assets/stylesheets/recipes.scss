@@ -1,0 +1,30 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.ingredients-list {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  thead {
+    background-color: #eeeeee;
+    th {
+      padding-left: 10px;
+    }
+  }
+
+  tbody {
+    td {
+      border-bottom: 1px solid lightgrey;
+      padding-left: 10px;
+    }
+  }
+}

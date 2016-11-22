@@ -3,6 +3,6 @@
   <h1><%= @item.name %></h1>
   <%= @item.thumbnail_url.nil? ? '' : image_tag(@item.thumbnail_url, size: @item.thumbnail_size) %>
   <p>
-    <%= link_to 'Edit', edit_item_path(@item) %> | <%= link_to 'Back', items_path %>
+    <%= link_to 'Edit', edit_item_path(@item) if logged_in? %> | <%= link_to 'Back', items_path %>
   </p>
 </div>

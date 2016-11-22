@@ -1,0 +1,8 @@
+<h1>Editing Ingredient</h1>
+
+
+
+<%= render 'form', recipe: @recipe, ingredient: @ingredient %>
+
+<%= link_to 'Show', [@recipe, @ingredient] %> |
+<%= link_to 'Back', recipe_ingredients_path %>

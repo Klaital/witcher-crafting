@@ -1,0 +1,46 @@
+<div class="center jumbotron">
+  <h1><%= @item.name %></h1>
+  <%= @item.thumbnail_url.nil? ? '' : image_tag(@item.thumbnail_url, size: @item.thumbnail_size) %>
+  <p>
+    <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) if logged_in? %> | <%= link_to 'Back', recipes_path %>
+  </p>
+</div>
+
+<p>
+  <strong>Artisan:</strong>
+  <%= @recipe.level %> <%= @recipe.artisan %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @recipe.cost + @ingredients_cost %> crowns: <%= @recipe.cost %> for the crafting + <%= @ingredients_cost %> for the materials
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @recipe.comments %>
+</p>
+
+<h2>Ingredients</h2>
+
+<table class="ingredients-list">
+  <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th>Qty</th>
+      <th>Value</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.item.name %></td>
+      <td><%= ingredient.qty %></td>
+      <td><%= ingredient.item.val %></td>
+      <td><%= link_to 'Edit', edit_recipe_ingredient_path(@recipe, ingredient) if logged_in? %></td>
+      <td><%= link_to 'Destroy', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }  if logged_in? %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

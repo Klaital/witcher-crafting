@@ -1,0 +1,22 @@
+<div class="center jumbotron">
+  <h1><%= @item.name %></h1>
+  <%= link_to 'New Ingredient', new_recipe_ingredient_path %>
+</div>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @ingredient_item.name %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @ingredient.qty %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @item.name %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', recipe_ingredients_path %>

@@ -1,0 +1,31 @@
+
+<div class="center jumbotron">
+  <h1><%= @item.name %></h1>
+  <%= link_to 'New Ingredient', new_recipe_ingredient_path %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qty</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.qty %></td>
+        <td><%= Item.find(ingredient.item_id).name %></td>
+        <td><%= link_to 'Show', [@recipe, ingredient] if logged_in? %></td>
+        <td><%= link_to 'Edit', edit_recipe_ingredient_path(@recipe, ingredient) if logged_in? %></td>
+        <td><%= link_to 'Destroy', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }  if logged_in? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
