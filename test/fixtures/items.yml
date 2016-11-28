@@ -7,6 +7,9 @@ silver_ingot:
   slot: component
   tier: Common
   craft_type: component
+  weight: 0.0
+  armor_type: n/a
+  thumbnail_size: 64x64
 
 saltpeter:
   id: 2
@@ -15,6 +18,9 @@ saltpeter:
   slot: component
   tier: Common
   craft_type: component
+  weight: 0.0
+  armor_type: n/a
+  thumbnail_size: 64x64
 
 optima_mater:
   id: 3
@@ -23,6 +29,9 @@ optima_mater:
   slot: component
   tier: Common
   craft_type: component
+  weight: 0.0
+  armor_type: n/a
+  thumbnail_size: 64x64
 
 dimeritium_bomb:
   id: 4
@@ -31,4 +40,7 @@ dimeritium_bomb:
   slot: Bomb
   tier: Witcher
   craft_type: Alchemy
+  weight: 0.0
+  armor_type: n/a
+  thumbnail_size: 64x64
 
