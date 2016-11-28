@@ -29,9 +29,11 @@ class ItemCreationTest < ActionDispatch::IntegrationTest
     assert_template 'items/show'
 
     assert_not_empty flash[:notice]
+    # An item's show page should have the following links
     assert_select "a[href=?]", logout_path
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", edit_item_path(new_item)
     assert_select "a[href=?]", items_path
+    assert_select "a[href=?]", new_recipe_path
   end
 end
