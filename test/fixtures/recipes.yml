@@ -1,15 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  item: 
-  level: MyString
-  artisan: MyString
-  cost: 1
-  comments: MyString
-
-two:
-  item: 
-  level: MyString
-  artisan: MyString
-  cost: 1
-  comments: MyString
+dimeritium_bomb:
+  id: 1
+  item_id: 4
+  level: Amateur
+  artisan: Alchemy
+  cost: 0

@@ -1,23 +1,34 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  armor: 1
-  damage_min: 1
-  damage_max: 1
-  sell_price: 1
-  buy_price: 1
-  enhancement_slots: 1
-  other_effects: MyString
-  comments: MyString
+silver_ingot:
+  id: 1
+  name: Silver ingot
+  val: 40
+  slot: component
+  tier: Common
+  craft_type: component
 
-two:
-  name: MyString
-  armor: 1
-  damage_min: 1
-  damage_max: 1
-  sell_price: 1
-  buy_price: 1
-  enhancement_slots: 1
-  other_effects: MyString
-  comments: MyString
+saltpeter:
+  id: 2
+  name: Saltpeter
+  val: 10
+  slot: component
+  tier: Common
+  craft_type: component
+
+optima_mater:
+  id: 3
+  name: Optima Mater
+  val: 30
+  slot: component
+  tier: Common
+  craft_type: component
+
+dimeritium_bomb:
+  id: 4
+  name: Dimeritium Bomb
+  val: 100
+  slot: Bomb
+  tier: Witcher
+  craft_type: Alchemy
+

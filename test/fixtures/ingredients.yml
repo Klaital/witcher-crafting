@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  item: one
+dimeritium_saltpeter:
+  id: 1
+  item_id: 2
   qty: 1
-  recipe: one
+  recipe_id: 1
 
-two:
-  item: two
-  qty: 1
-  recipe: two
+dimeritium_optima_mater:
+  id: 2
+  item_id: 3
+  qty: 2
+  recipe_id: 1
