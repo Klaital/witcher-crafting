@@ -14,6 +14,11 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
+    unless logged_in?
+      flash.now[:warning] = 'Please log in to edit the database.'
+      redirect_to login_path and return
+    end
+
     @all_item_ids = []
     Item.find_each do |i|
       @all_item_ids.push([i.name, i.id])
@@ -23,6 +28,11 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    unless logged_in?
+      flash.now[:warning] = 'Please log in to edit the database.'
+      redirect_to login_path and return
+    end
+
     @all_item_ids = []
     Item.find_each do |i|
       @all_item_ids.push([i.name, i.id])
@@ -32,6 +42,10 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
+    unless logged_in?
+      render :file => 'public/401', :status => :unauthorized, :layout => false and return
+    end
+
     @recipe = Recipe.new(recipe_params)
 
     respond_to do |format|
@@ -48,6 +62,9 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json
   def update
+    unless logged_in?
+      render :file => 'public/401', :status => :unauthorized, :layout => false and return
+    end
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
@@ -62,6 +79,9 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.json
   def destroy
+    unless logged_in?
+      render :file => 'public/401', :status => :unauthorized, :layout => false and return
+    end
     @recipe.destroy
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
