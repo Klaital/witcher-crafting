@@ -94,7 +94,7 @@ class IngredientsController < ApplicationController
 
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.' }
+      format.html { redirect_to recipe_ingredients_url(@recipe), notice: 'Ingredient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
