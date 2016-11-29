@@ -2,13 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.recipe-action {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  margin-bottom: 20px;
+}
+
+// TODO: these tables have nearly identical CSS. Refactor into a common set of styles.
 table.ingredients-list {
   background-color: #dff0d8;
-  border-color: #d6e9c6;
   color: #3c763d;
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 1px solid #d6e9c6;
   border-radius: 4px;
 
   margin-left: auto;
@@ -26,5 +33,40 @@ table.ingredients-list {
       border-bottom: 1px solid lightgrey;
       padding-left: 10px;
     }
+  }
+}
+
+table.recipe-details {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  th {
+    background-color: #eeeeee;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  td {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  tr {
+    border-bottom: 1px solid #d6e9c6;
+  }
+}
+
+div.recipe-description {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 70%;
+  table {
+
   }
 }
