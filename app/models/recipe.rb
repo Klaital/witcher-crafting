@@ -15,4 +15,13 @@ class Recipe < ApplicationRecord
                 message: "%{value} is not a valid craft level"
             }
 
+  def ingredients_cost
+    sum = 0
+    ingredients.each {|ingredient| sum += ingredient.item.val * ingredient.qty}
+    sum
+  end
+
+  def total_cost
+    ingredients_cost + cost
+  end
 end
