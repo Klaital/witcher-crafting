@@ -15,8 +15,10 @@
     <tr>
       <th>Recipe Actions</th>
       <td>
-        <%= link_to 'Edit', edit_recipe_path(recipe) %> |
-        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if logged_in? %>
+          <%= link_to 'Edit', edit_recipe_path(recipe) %> |
+          <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </td>
     </tr>
   </table>
