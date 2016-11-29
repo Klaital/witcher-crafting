@@ -44,3 +44,29 @@ dimeritium_bomb:
   armor_type: n/a
   thumbnail_size: 64x64
 
+feline_silver_sword:
+  id: 5
+  name: Feline Silver Sword
+  val: 520
+  damage_min: 256
+  damage_max: 312
+  level_requirement: 17
+  weight: 1.18
+  other_effects: +12% Aard sign intensity +5% Chance to cause bleeding +20% bonus experience from monsters
+  tier: Common
+  craft_type: Blacksmith
+  slot: Silver
+  armor_type: n/a
+  thumbnail_size: 64x64
+
+# Note that there is no gold value for silver_ore.
+# It is here to test cost calculations for ingredients whose values are not known.
+silver_ore:
+  id: 6
+  name: Silver ore
+  slot: component
+  tier: Common
+  craft_type: component
+  weight: 0.0
+  armor_type: n/a
+  thumbnail_size: 64x64

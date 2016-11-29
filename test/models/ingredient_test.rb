@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class IngredientTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "ingredients should compute their costs correctly" do
+
+  end
 end

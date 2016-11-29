@@ -6,6 +6,11 @@ class RecipeTest < ActiveSupport::TestCase
     assert_equal(70, r.ingredients_cost)
   end
 
+  test "the recipe should compute its ingredient costs correctly when some are unknown" do
+    r = recipes(:silver_ingot)
+    assert_equal(0, r.ingredients_cost)
+  end
+
   test "the recipe should compute its total cost correctly" do
     r = recipes(:dimeritium_bomb)
     assert_equal(70, r.ingredients_cost)

@@ -6,3 +6,10 @@ dimeritium_bomb:
   level: Amateur
   artisan: Alchemy
   cost: 0
+
+silver_ingot:
+  id: 2
+  item_id: 1
+  level: Amateur
+  artisan: Alchemy
+  cost: 0

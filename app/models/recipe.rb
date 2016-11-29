@@ -17,7 +17,7 @@ class Recipe < ApplicationRecord
 
   def ingredients_cost
     sum = 0
-    ingredients.each {|ingredient| sum += ingredient.item.val * ingredient.qty}
+    ingredients.each {|ingredient| sum += ingredient.cost}
     sum
   end
 
