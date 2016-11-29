@@ -12,6 +12,13 @@
       <th>Ingredients Cost</th>
       <td><%= recipe.ingredients_cost %></td>
     </tr>
+    <tr>
+      <th>Recipe Actions</th>
+      <td>
+        <%= link_to 'Edit', edit_recipe_path(recipe) %> |
+        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
   </table>
-  <%= render 'ingredients_table', :recipe => recipe %>
+  <%= render :partial => '/recipes/ingredients_table', :locals => {:recipe => recipe} %>
 </div>

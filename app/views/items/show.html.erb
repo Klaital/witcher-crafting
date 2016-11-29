@@ -66,4 +66,9 @@
 
 </div>
 
-
+<div class="recipe-list">
+  <h2>Recipes</h2>
+  <% @recipes.each do |recipe| %>
+    <%= render :partial => '/recipes/table', :locals => {:recipe => recipe} %>
+  <% end %>
+</div>
