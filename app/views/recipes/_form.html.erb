@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :level %>
-    <%= f.text_field :level %>
+    <%= f.select(:level, Recipe::VALID_LEVELS) %>
   </div>
 
   <div class="field">
     <%= f.label :artisan %>
-    <%= f.text_field :artisan %>
+    <%= f.select(:artisan, Recipe::VALID_ARTISANS) %>
   </div>
 
   <div class="field">

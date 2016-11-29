@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     Item.find_each do |i|
       @all_item_ids.push([i.name, i.id])
     end
-    @recipe = Recipe.new
+    @recipe = Recipe.new(:item_id => params[:produces])
   end
 
   # GET /recipes/1/edit
