@@ -10,3 +10,60 @@
     <%= link_to 'Back', items_path %>
   </p>
 </div>
+<div class="item-description">
+  <p>
+    <strong>Equipment Slot:</strong>
+    <%= @item.slot %>
+  </p>
+  <p>
+    <strong>Item Tier:</strong>
+    <%= @item.tier %>
+  </p>
+  <p>
+    <strong>Craft Type:</strong>
+    <%= @item.craft_type %>
+  </p>
+  <% unless @item.armor.to_s.empty? %>
+      <p>
+        <strong>Armor Rating:</strong>
+        <%= @item.craft_type %>
+      </p>
+  <% end %>
+  <% unless @item.damage_min.to_s.empty? %>
+      <p>
+        <strong>Damage:</strong>
+        <%= @item.damage_min %> <%= (@item.damage_max.to_s.empty? ? '' : " - #{@item.damage_max}") %>
+      </p>
+  <% end %>
+  <p>
+    <strong>Gold Value:</strong>
+    <%= @item.val%>
+  </p>
+  <% unless @item.enhancement_slots.to_s.empty? %>
+      <p>
+        <strong>Rune Slots:</strong>
+        <%= @item.enhancement_slots%>
+      </p>
+  <% end %>
+  <% unless @item.level_requirement.to_s.empty? %>
+      <p>
+        <strong>Level Requirement:</strong>
+        <%= @item.level_requirement %>
+      </p>
+  <% end %>
+  <p>
+    <strong>Weight:</strong>
+    <%= @item.weight %>
+  </p>
+  <p>
+    <strong>Other Effects:</strong>
+    <%= @item.other_effects %>
+  </p>
+  <p>
+    <strong>Notes:</strong>
+    <%= @item.comments %>
+  </p>
+
+</div>
+
+
