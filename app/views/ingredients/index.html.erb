@@ -6,22 +6,14 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Qty</th>
-      <th>Item</th>
-      <th colspan="3"></th>
-    </tr>
+  <%= render 'row_header' %>
+
   </thead>
 
   <tbody>
     <% @ingredients.each do |ingredient| %>
-      <tr>
-        <td><%= ingredient.qty %></td>
-        <td><%= Item.find(ingredient.item_id).name %></td>
-        <td><%= link_to 'Show', [@recipe, ingredient] if logged_in? %></td>
-        <td><%= link_to 'Edit', edit_recipe_ingredient_path(@recipe, ingredient) if logged_in? %></td>
-        <td><%= link_to 'Destroy', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }  if logged_in? %></td>
-      </tr>
+      <% item = Item.find(ingredient.item_id) %>
+      <%= render 'row', :ingredient => ingredient, :recipe => @recipe %>
     <% end %>
   </tbody>
 </table>

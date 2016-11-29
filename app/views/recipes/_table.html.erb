@@ -1,0 +1,17 @@
+<div class="recipe-description">
+  <table class="recipe-details">
+    <tr>
+      <th>Artisan</th>
+      <td><%= recipe.level %> <%= recipe.artisan %></td>
+    </tr>
+    <tr>
+      <th>Crafting Fee</th>
+      <td><%= recipe.cost %></td>
+    </tr>
+    <tr>
+      <th>Ingredients Cost</th>
+      <td><%= ingredients_cost %></td>
+    </tr>
+  </table>
+  <%= render 'ingredients_table', :recipe => recipe %>
+</div>

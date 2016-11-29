@@ -1,0 +1,9 @@
+<tr>
+  <td><%= ingredient.qty %></td>
+  <td><%= ingredient.item.name %></td>
+  <td><%= ingredient.qty * ingredient.item.val.to_i %></td>
+  <% if logged_in? %>
+    <td><%= link_to 'Edit', edit_recipe_ingredient_path(recipe, ingredient) %></td>
+    <td><%= link_to 'Destroy', [recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</tr>

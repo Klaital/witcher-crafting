@@ -1,0 +1,10 @@
+<table class="ingredients-list">
+  <thead>
+  <%= render :partial => '/ingredients/row_header' %>
+  </thead>
+  <tbody>
+  <% recipe.ingredients.each do |ingredient| %>
+      <%= render :partial => '/ingredients/row', :locals => {:ingredient => ingredient, :recipe => recipe} %>
+  <% end %>
+  </tbody>
+</table>
