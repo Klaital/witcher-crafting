@@ -1,4 +1,5 @@
 <div class="recipe-description">
+  <div class="recipe-action"><%= link_to '(+new recipe)', new_recipe_path(:produces => @item.id) if logged_in? %></div>
   <table class="recipe-details">
     <tr>
       <th>Artisan</th>
@@ -22,5 +23,6 @@
       </td>
     </tr>
   </table>
+  <div class="recipe-action"><%= link_to '(+add ingredient)', new_recipe_ingredient_path(recipe) if logged_in? %></div>
   <%= render :partial => '/recipes/ingredients_table', :locals => {:recipe => recipe} %>
 </div>

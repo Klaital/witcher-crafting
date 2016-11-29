@@ -67,7 +67,6 @@
 
 <div class="recipe-list">
   <h2>Recipes</h2>
-  <div class="recipe-action"><%= link_to '(+new recipe)', new_recipe_path(:produces => @item.id) %></div>
   <% @recipes.each do |recipe| %>
     <%= render :partial => '/recipes/table', :locals => {:recipe => recipe} %>
   <% end %>
