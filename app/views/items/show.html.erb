@@ -66,7 +66,7 @@
 </div>
 
 <div class="recipe-list">
-  <h2>Recipes</h2>
+  <h2>Recipes <%= link_to '(+)', new_recipe_path(:produces => @item.id) if logged_in? %></h2>
   <% @recipes.each do |recipe| %>
     <%= render :partial => '/recipes/table', :locals => {:recipe => recipe} %>
   <% end %>
