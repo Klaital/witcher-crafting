@@ -4,7 +4,7 @@
   <%= @item.thumbnail_url.nil? ? '' : image_tag(@item.thumbnail_url, size: @item.thumbnail_size) %>
   <p>
     <% if logged_in? %>
-        <%= link_to 'Create a new recipe for this item', new_recipe_path %> |
+        <%= link_to 'Create a new recipe for this item', new_recipe_path(:produces => @item.id) %> |
         <%= link_to 'Edit', edit_item_path(@item) %> |
     <% end %>
     <%= link_to 'Back', items_path %>

@@ -34,6 +34,6 @@ class ItemCreationTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user)
     assert_select "a[href=?]", edit_item_path(new_item)
     assert_select "a[href=?]", items_path
-    assert_select "a[href=?]", new_recipe_path
+    assert_select "a[href=?]", new_recipe_path(:produces => new_item.id)
   end
 end
