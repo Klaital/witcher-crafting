@@ -57,7 +57,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to [@recipe, @ingredient], notice: 'Ingredient was successfully created.' }
+        format.html { redirect_to Item.find(@recipe.item_id), notice: 'Ingredient was successfully added to the recipe.' }
         format.json { render :show, status: :created, location: @ingredient }
       else
         flash.now[:error] = 'Unable to save ingredient'
@@ -76,7 +76,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to [@recipe, @ingredient], notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to Item.find(@recipe.item_id), notice: 'Ingredient was successfully updated.' }
         format.json { render :show, status: :ok, location: [@recipe, @ingredient] }
       else
         format.html { render :edit }
@@ -94,7 +94,7 @@ class IngredientsController < ApplicationController
 
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to recipe_ingredients_url(@recipe), notice: 'Ingredient was successfully destroyed.' }
+      format.html { redirect_to Item.find(@recipe.item_id), notice: 'Ingredient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

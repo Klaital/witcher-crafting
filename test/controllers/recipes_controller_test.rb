@@ -32,7 +32,9 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       post recipes_url, params: { recipe: { artisan: @recipe.artisan, cost: @recipe.cost, item_id: @recipe.item_id, level: @recipe.level } }
     end
 
-    assert_redirected_to recipe_url(Recipe.last)
+    recipe = Recipe.last
+    item = Item.find(recipe.item_id)
+    assert_redirected_to item_url(item)
   end
   test "should not create recipe when not logged in" do
     assert_no_difference('Recipe.count') do
@@ -55,7 +57,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   test "should update recipe when logged in" do
     post login_path, params: {session: {email: @user.email, password: 'foobar'}}
     patch recipe_url(@recipe), params: { recipe: { artisan: @recipe.artisan, cost: @recipe.cost, item_id: @recipe.item_id, level: @recipe.level } }
-    assert_redirected_to recipe_url(@recipe)
+    assert_redirected_to item_url(Item.find(@recipe.item_id))
   end
   test "should not update recipe when not logged in" do
     patch recipe_url(@recipe), params: { recipe: { artisan: @recipe.artisan, cost: @recipe.cost, item_id: @recipe.item_id, level: @recipe.level } }
@@ -68,7 +70,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       delete recipe_url(@recipe)
     end
 
-    assert_redirected_to recipes_url
+    assert_redirected_to item_url(Item.find(@recipe.item_id))
   end
 
   test "should not destroy recipe when not logged in" do

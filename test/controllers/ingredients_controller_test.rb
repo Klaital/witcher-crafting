@@ -34,7 +34,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
       post recipe_ingredients_url(@recipe), params: { ingredient: { item_id: @ingredient.item_id, qty: @ingredient.qty, recipe_id: @ingredient.recipe_id } }
     end
 
-    assert_redirected_to recipe_ingredient_url(@recipe, Ingredient.last)
+    assert_redirected_to item_url(Item.find(@recipe.item_id))
   end
 
   test "should not create ingredient when not logged in" do
@@ -68,7 +68,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     post login_path, params: {session: {email: @user.email,
                                         password: 'foobar'}}
     patch recipe_ingredient_url(@recipe, @ingredient), params: { ingredient: { item_id: @ingredient.item_id, qty: @ingredient.qty, recipe_id: @ingredient.recipe_id } }
-    assert_redirected_to recipe_ingredient_url(@recipe, @ingredient)
+    assert_redirected_to item_url(Item.find(@recipe.item_id))
   end
 
   test "should not update ingredient when not logged in" do
@@ -84,7 +84,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
       delete recipe_ingredient_url(@recipe, @ingredient)
     end
 
-    assert_redirected_to recipe_ingredients_url(@recipe)
+    assert_redirected_to item_url(Item.find(@recipe.item_id))
   end
 
   test "should not destroy ingredient when not logged in" do
